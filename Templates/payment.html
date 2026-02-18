@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M-Pesa Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>M-Pesa Payment</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="phone" placeholder="Phone number (2547XXXXXXXX)" required>
+
+        <input type="number" name="amount" placeholder="Amount" required>
+
+        <button type="submit">Pay Now</button>
+    </form>
+</div>
+
+</body>
+</html> -->
+
+<form method="POST" action="{% url 'stk_push' %}">
+    {% csrf_token %}
+    <input type="text" name="phone" placeholder="2547XXXXXXXX">
+    <input type="number" name="amount" placeholder="Amount">
+    <button type="submit">Pay</button>
+</form>
